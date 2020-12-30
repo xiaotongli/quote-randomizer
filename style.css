@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+div {
+    font-size: 36px;
+    width: 40%;
+}
+
+button, button:focus {
+    align-self: flex-end;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+    border: none;
+    outline-style: none;
+    cursor: pointer;
+    padding-right: 10%
+}
+
+.material-icons.md-16 { 
+    font-size: 16px; 
+}
+
+.material-icons.md-24 { 
+    font-size: 24px; 
+}
+
+#quote {
+    padding: 0% 0% 0% 6%;
+    box-shadow: -5px 0px 0px 0px #F7DF94;
+    margin-top: 12.5%;
+    display: inline-block;
+    height: fit-content;
+}
+
+#author {
+    background-color: #333333;
+    font-size: 24px;
+    color: #F2F2F2;
+    padding: 2%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 5%;
+}
+
+/* #arrow {
+    align-self: flex-end;
+} */
+
+#genre {
+    font-size: 14px;
+    color: #828282;
+    padding: 10px 0px 0px 0px;
+}
