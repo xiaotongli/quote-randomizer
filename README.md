@@ -1,89 +1,36 @@
-<!-- Please update value in the {}  -->
+# Quote Randomizer
 
-<h1 align="center">Quote Randomizer</h1>
+My first challenge from the Front-End Developer challenge path of [Devchallenges.io](http://devchallenges.io).
 
-<div align="center">
-   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
-</div>
+## Overview Description
 
-<div align="center">
-  <h3>
-    <a href="https://{your-url-to-the-solution}">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://devchallenges.io/challenges/8Y3J4ucAMQpSnYTwwWW8">
-      Challenge
-    </a>
-  </h3>
-</div>
+The [challenge](https://devchallenges.io/challenges/8Y3J4ucAMQpSnYTwwWW8) was to build a quote generator application that fulfills the following user stories below:
+- I can see a random quote
+- I can generate a new random quote
+- I can see the quote genre under the author
+- When I select the quote's author, I can see a list of quotes from them
 
-<!-- TABLE OF CONTENTS -->
-
-## Table of Contents
-
-- [Overview](#overview)
-  - [Built With](#built-with)
-- [Features](#features)
-- [How to use](#how-to-use)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
-
-<!-- OVERVIEW -->
-
-## Overview
+A set of designs in Figma was also provided as a challenge and resource. 
 
 ![screenshot](img/sample.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+This project can be viewed at this [link](https://xiaotongli.github.io/famous-words/).
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+This is my first time working with an API and there are still some refactoring and feature ideas I'd like to implement:
+- Use Fetch API instead of XMLHTTPRequests
+- Use a front-end framework like React or Vue.js
+- Use Tailwind CSS to polish up current css styling
+- Filters to allow for the selection of a particular genre or author
+- Viewing multiple pages of quotes from a single author
+- Allow for users to add a quote to their favorites
+- General text aligning updates
+- General optimizations for faster page content load time
 
-### Built With
+## Technologies
 
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
-
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
-
-## Features
-
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/8Y3J4ucAMQpSnYTwwWW8) was to build an application to complete the given user stories.
-
-
-## How To Use
-
-<!-- For example: -->
-
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
-
-## Acknowledgements
-
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-
-## Contact
-
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+Project is created with: 
+- Not yet: [React](https://reactjs.org/)
+- Not yet: [Vue.js](https://vuejs.org/)
+- Not yet: [Tailwind](https://tailwindcss.com/)
+- [Quote-Garden API](https://pprathameshmore.github.io/QuoteGarden/)
+- [Material Design Icons](https://google.github.io/material-design-icons/)
