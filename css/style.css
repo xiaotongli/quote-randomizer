@@ -1,3 +1,7 @@
+html {
+    overflow-y: scroll;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -6,36 +10,21 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
 div {
     font-size: 36px;
     width: 40%;
+    positive: fixed;
 }
 
-button, button:focus {
-    align-self: flex-end;
-    text-align: center;
-    vertical-align: middle;
-    height: 50px;
-    font-family: 'Raleway', sans-serif;
-    background-color: white;
-    border: none;
-    outline-style: none;
-    cursor: pointer;
-    padding-right: 10%
-}
-
-.material-icons.md-16 { 
-    font-size: 16px; 
-}
-
-.material-icons.md-24 { 
-    font-size: 24px; 
-}
-
-#quote {
+.quote, .quotes {
     padding: 0% 0% 0% 6%;
     box-shadow: -5px 0px 0px 0px #F7DF94;
-    margin-top: 12.5%;
+    margin-top: 5%;
     display: inline-block;
     height: fit-content;
 }
@@ -63,3 +52,28 @@ button, button:focus {
     color: #828282;
     padding: 10px 0px 0px 0px;
 }
+
+/* -- buttons and icons -- */
+
+button, button:focus {
+    align-self: flex-end;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+    border: none;
+    outline-style: none;
+    cursor: pointer;
+    padding-right: 10%;
+}
+
+.material-icons.md-16 { 
+    font-size: 16px; 
+}
+
+.material-icons.md-24 { 
+    font-size: 24px; 
+}
+
+
