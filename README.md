@@ -2,7 +2,7 @@
 
 My first challenge from the Front-End Developer challenge path of [Devchallenges.io](http://devchallenges.io).
 
-## Overview Description
+## Web App Description
 
 The [challenge](https://devchallenges.io/challenges/8Y3J4ucAMQpSnYTwwWW8) was to build a quote generator application that fulfills the following user stories below:
 - I can see a random quote
