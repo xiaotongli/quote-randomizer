@@ -14,7 +14,7 @@ A set of designs in Figma was also provided as a challenge and resource.
 
 ![screenshot](img/sample.png)
 
-This project can be viewed at this [link](https://xiaotongli.github.io/famous-words/).
+This project can be viewed at this [link](https://xiaotongli.github.io/quote-randomizer/).
 
 This is my first time working with an API and there are still some refactoring and feature ideas I'd like to implement:
 - Use Fetch API instead of XMLHTTPRequests
