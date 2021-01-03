@@ -17,14 +17,12 @@ A set of designs in Figma was also provided as a challenge and resource.
 This project can be viewed at this [link](https://xiaotongli.github.io/quote-randomizer/).
 
 This is my first time working with an API and there are still some refactoring and feature ideas I'd like to implement:
-- Use Fetch API instead of XMLHTTPRequests
 - Use a front-end framework like React or Vue.js
 - Use Tailwind CSS to polish up current css styling
 - Filters to allow for the selection of a particular genre or author
 - Viewing multiple pages of quotes from a single author
 - Allow for users to add a quote to their favorites
 - General text aligning updates
-- General optimizations for faster page content load time
 
 ## Technologies
 
