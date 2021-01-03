@@ -13,27 +13,27 @@ body {
 h2 {
     font-size: 36px;
     font-weight: bold;
+    visibility: hidden;
 }
 
 div {
     font-size: 36px;
     width: 40%;
-    positive: fixed;
 }
 
 .quote, .quotes {
-    padding: 0% 0% 0% 6%;
+    padding: 0% 0% 0% 5%;
     box-shadow: -5px 0px 0px 0px #F7DF94;
     margin-top: 5%;
     display: inline-block;
     height: fit-content;
 }
 
-#author {
+.info {
     background-color: #333333;
-    font-size: 24px;
     color: #F2F2F2;
     padding: 2%;
+    width: 35%;
     height: 100px;
     display: flex;
     flex-direction: column;
@@ -41,13 +41,25 @@ div {
     align-items: flex-start;
     margin-top: 5%;
     cursor: pointer;
+    visibility: hidden;
+    position: relative;
 }
 
-/* #arrow {
-    align-self: flex-end;
-} */
+.author {
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+}
 
-#genre {
+.arrow {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 30px;
+    width: 100%;
+}
+
+.genre {
     font-size: 14px;
     color: #828282;
     padding: 10px 0px 0px 0px;
@@ -72,8 +84,6 @@ button, button:focus {
     font-size: 16px; 
 }
 
-.material-icons.md-24 { 
-    font-size: 24px; 
+.material-icons.md-40 { 
+    font-size: 40px; 
 }
-
-

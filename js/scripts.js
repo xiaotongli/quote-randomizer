@@ -1,80 +1,72 @@
-// random button at top of page;
-const randomize = document.createElement('button');
-randomize.innerHTML = 'random ' + '<i class="material-icons md-16">cached</i>';
-document.body.appendChild(randomize);
+// different API endpoints
+const urlRandom = 'https://quote-garden.herokuapp.com/api/v3/quotes/random';
+let urlAuthor = 'https://quote-garden.herokuapp.com/api/v3/quotes';
 
-// Create a request variable and assign a new XMLHttpRequest object to it.
-const requestRandom = new XMLHttpRequest();
-const requestAuthor = new XMLHttpRequest();
-
-let headerAuthor = document.createElement('h2');
-headerAuthor.innerHTML = 'Author Name';
-document.body.appendChild(headerAuthor);
-headerAuthor.style.visibility = 'hidden';
-
-let dataRandom;
-let dataQuotes;
+const quoteBox = $('.quote')[0];
+const info = $('.info')[0];
+const quoteAuthor = $('.author')[0];
+const quoteGenre = $('.genre')[0];
+const title = $('#authorTitle')[0];
+const btn = $('#random')[0];
 let author;
-const quoteBox = new Quote(document.body, '');
-quoteBox.node.setAttribute('class', 'quote');
-const quoteAuthor = new Author(document.body, '');
-quoteAuthor.node.addEventListener('click', loadAuthor);
-const quoteGenre = new Genre(document.body, '');
 let quotesForAuthor;
 let divsToHide;
 
-function generateQuote() {
-  // Open a new connection, using the GET request on the URL endpoint
-  requestRandom.open('GET', 'https://quote-garden.herokuapp.com/api/v3/quotes/random', true);
+function displayQuote(dataRandom) {
+  title.style.visibility = 'hidden';
 
-  // Send request
-  requestRandom.send();
+  divsToHide = $('.quotes');
+  for (let i = 0; i < divsToHide.length; i++) {
+    divsToHide[i].remove();
+  }
 
-  requestRandom.onload = function () {
-    dataRandom = JSON.parse(this.response);
-    // const authorArrow = document.createElement('div');
-    // authorArrow.setAttribute('id', 'arrow');
-    // $(".quote").remove();
+  if (!quoteBox.isConnected) {
+    document.body.appendChild(quoteBox);
+    document.body.appendChild(info);
+  }
 
-    headerAuthor.style.visibility = 'hidden';
+  quoteBox.innerHTML = `"${dataRandom.data[0].quoteText}"`;
+  quoteAuthor.innerHTML = dataRandom.data[0].quoteAuthor;
+  quoteGenre.innerHTML = dataRandom.data[0].quoteGenre;
 
-    divsToHide = document.querySelectorAll('div.quotes');
-    for (let i = 0; i < divsToHide.length; i++) {
-      divsToHide[i].remove();
-    }
-
-    if (!quoteBox.node.isConnected) {
-      document.body.appendChild(quoteBox.node);
-      document.body.appendChild(quoteAuthor.node);
-      // document.body.appendChild(quoteGenre.node);
-      // authorArrow.innerHTML = '<i class="material-icons md-24">arrow_right_alt</i>';
-      // quoteAuthor.appendChild(authorArrow);
-    }
-
-    quoteBox.node.innerHTML = `"${dataRandom.data[0].quoteText}"`;
-    quoteAuthor.node.innerHTML = dataRandom.data[0].quoteAuthor;
-    quoteGenre.node.innerHTML = dataRandom.data[0].quoteGenre;
-    quoteAuthor.node.appendChild(quoteGenre.node);
-  };
+  info.style.visibility = 'visible';
+  info.addEventListener('click', getQuotesByAuthor);
 }
 
-randomize.addEventListener('click', generateQuote);
-generateQuote();
-
-function loadAuthor() {
-  quoteBox.node.remove();
-  quoteAuthor.node.remove();
-  // quoteGenre.node.remove();
-
-  author = dataRandom.data[0].quoteAuthor;
-  headerAuthor.innerHTML = author;
-  headerAuthor.style.visibility = 'visible';
-  requestAuthor.open('GET', `https://quote-garden.herokuapp.com/api/v3/quotes?author=${author}`, true);
-  requestAuthor.onload = function () {
-    dataQuotes = JSON.parse(this.response);
-    for (let i = 0; i < dataQuotes.data.length; i++) {
-      quotesForAuthor = new Quote(document.body, `"${dataQuotes.data[i].quoteText}"`);
-    }
-  };
-  requestAuthor.send();
+// open a new connection, using the GET request for a random quote
+function getQuote() {
+  fetch(urlRandom)
+    .then((resp) => resp.json())
+    .then((dataRandom) => displayQuote(dataRandom))
+    .catch((error) => {
+      console.log(error);
+    });
 }
+
+function displayAuthor(dataAuthor) {
+  quoteBox.remove();
+  info.remove();
+  // quoteGenre.remove();
+
+  title.innerHTML = author;
+  title.style.visibility = 'visible';
+
+  for (let i = 0; i < dataAuthor.data.length; i++) {
+    quotesForAuthor = new Quote(document.body, `"${dataAuthor.data[i].quoteText}"`);
+  }
+}
+
+// open a new connection, using the GET request for all quotes by a specific author
+function getQuotesByAuthor() {
+  author = quoteAuthor.innerHTML;
+
+  fetch(`${urlAuthor}?author=${author}`)
+    .then((resp) => resp.json())
+    .then((dataAuthor) => displayAuthor(dataAuthor))
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+btn.addEventListener('click', getQuote);
+getQuote();
